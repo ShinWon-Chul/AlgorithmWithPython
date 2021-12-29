@@ -7,12 +7,10 @@ def solution(word, pages):
     max_escore = 0
     result = []
     
-    content_patern = re.compile("content=[\S]*/>", re.DOTALL)
-    body_patern = re.compile("<body>[\S\s]*</body>", re.DOTALL)
-    href_patern = re.compile("<a href=[\S]*>", re.DOTALL)
+    body_patern = re.compile("<body>[\S\s]*</body>")
+    href_patern = re.compile("<a href=[\S]*>")
     
     for idx, page in enumerate(pages):
-        # c = content_patern.search(page)
         c = re.search(r'<meta property=\"og:url\" content=\"https://([\S]*)\"/>', page).group(1)
         b = body_patern.search(page)
         h = href_patern.findall(page)
