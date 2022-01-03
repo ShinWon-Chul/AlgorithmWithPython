@@ -26,12 +26,11 @@ class Trie:
                 current_node = current_node.children[char]
                 current_node.data += 1
     
-    # Trie에서 string이 있는지 찾는 함수
     def search(self, string):
         # head노드부터 시작
         current_node = self.head
         
-        #문자열의 문자를 하나씩 확인
+        # 문자열의 문자를 하나씩 확인
         count = 0
         for char in string:
             count += 1
@@ -39,8 +38,10 @@ class Trie:
             if char in current_node.children:
                 # current_node를 자식 노드로 변경
                 current_node = current_node.children[char]
+                # string의 subset이 유일하다면 count return
                 if current_node.data == 1:
                     return count
+        # 문자열을 전부 입력해야 찾을수 있는경우
         return count
                     
 def solution(words):
