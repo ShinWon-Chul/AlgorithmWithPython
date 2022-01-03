@@ -46,50 +46,6 @@ class Trie:
         # 문자열 끝까지 탐색하여 마지막 노드에 데이터가 없다면
         else:
             return False
-
-    # BFS 방식으로 깊이를 늘려가며 prefix로 시작하는 문자열을 저장한 배열 반환
-    def starts_with(self, prefix):
-        # head 노드부터 시작
-        current_node = self.head
-        #prefix로 시작하는 문자열을 저장할 리스트
-        words = []
-
-        # prefix의 처음부터 마지막까지 탐색
-        for p in prefix:
-            # 만약 현재 노드의 자식노드중 문자에 해당하는 노드가 존재한다면
-            if p in current_node.children:
-                # current_node를 자식 노드로 변경
-                current_node = current_node.children[p]
-            # 현재 노드의 자식노드중 문자에 해당하는 노드가 없다면 
-            else:
-                return None
-
-        # prefix의 마지막 노드
-        current_node = [current_node]
-        # 다음 노드를 저장할 배열
-        next_node = []
-        while True:
-            #현재 노드부터 탐색
-            for node in current_node:
-                #만약에 데이터가 있다면
-                if node.data:
-                    #word 배열에 추가
-                    words.append(node.data)
-                # 현재 노드의 자식 노드 전부를 next_node 배열에 추가
-                # list extend 와 expend 정리
-                next_node.extend(list(node.children.values()))
-            
-            # 만약 다음 노드가 존재한다면
-            if len(next_node) != 0:
-                # 다음 노드들을 현재 노드로 변경
-                current_node = next_node
-                #next_node는 다시 비워준다
-                next_node = []
-            # 다음 노드가 없다면 종료
-            else:
-                break
-
-        return words
     
 n, m = map(int, input().split())
 s = []
