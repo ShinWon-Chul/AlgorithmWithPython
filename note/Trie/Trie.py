@@ -97,4 +97,7 @@ word_list = ["frodo", "front", "firefox", "fire"]
 for word in word_list:
     trie.insert(word)
 print(trie.starts_with("fr"))
+# ['frodo', 'front']
+
 print(trie.search("frodo"))
+# True
