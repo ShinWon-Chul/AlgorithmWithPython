@@ -37,7 +37,7 @@
     * [union of two sorted lists](/note/Miscellaneous/Two%20Pointers/union%20of%20two%20sorted%20lists.py)
 * Interval Sum
     * [Prefix Sum](/note/Miscellaneous/Interval%20Sum/prefix_sum.py)
-* [Nonation]
+* Nonation
     * [int to nonation](/note/Miscellaneous/Nonation/int_to_nonation.py)
 
 ### Recursion
