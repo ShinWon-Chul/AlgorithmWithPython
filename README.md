@@ -24,9 +24,11 @@
 * [Permutation](/note/Probability%20Theory/permutation.py)
 * [Combination](/note/Probability%20Theory/combination.py)
 
-### Number Theory
+### Math
 
-* [Check Prime Number](/Number%20Theory/is_prime_number.py)
+* [Check Prime Number](/note/math/is_prime_number.py)
+* [Eratos](/note/math/Eratos.py)
+
 
 ### Miscellaneous
 
@@ -43,4 +45,4 @@
 
 ### implementation
 * [Bisect Python Method](/note/implementation/bisect.py)
-* [Bisect Python Method](/note/implementation/rotate_matrix_by_90degree.py)
+* [Rotate Matrix By 90degree](/note/implementation/rotate_matrix_by_90degree.py)
