@@ -7,6 +7,7 @@ def solution(board):
 
     dp = [[[inf]*n for _ in range(n)] for _ in range(4)]
     q = deque([[0, 0, 0, 1], [0, 0, 0, 3]])
+    # dp테이블 접근 방법 : 방향, x, y
     dp[1][0][0] = 0
     dp[3][0][0] = 0
 
