@@ -4,6 +4,7 @@ import itertools
 def solution(user_id, banned_id):
     n = len(banned_id)
     candidate = []
+    count = 0
     for permut in itertools.permutations(user_id, n):
         tmp = []
         for idx, u_id in enumerate(permut):
@@ -14,5 +15,6 @@ def solution(user_id, banned_id):
             tmp.sort()
             if tmp not in candidate:
                 candidate.append(tmp)
-
-    return len(candidate)
+                count += 1
+    
+    return count
