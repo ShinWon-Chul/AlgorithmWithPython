@@ -35,3 +35,37 @@ def solution(board):
     for i in range(4):
         result = min(result, dp[i][-1][-1])                   
     return result * 100
+
+#다시 풀어본 풀이
+from collections import deque
+
+def solution(board):
+    n = len(board)
+    inf = int(1e9)
+    new_board = [ [[inf]*n for _ in range(n)] for _ in range(4)]
+    
+    # 상, 하, 좌, 우 = 0, 1, 2, 3
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    q = deque([[0, 0, 0, 1], [0, 0, 0, 3]])
+    for i in range(4):
+        new_board[i][0][0] = 0
+    def bfs():
+        while q:
+            x, y, cost, direction = q.popleft()
+            for i in range(4):
+                nx = x + dx[i]
+                ny = y + dy[i]
+                if 0 <= nx < n and 0<= ny < n and board[nx][ny] != 1 :
+                    if direction != i:
+                        new_cost = cost + 6
+                    else:
+                        new_cost = cost + 1
+                    if new_board[i][nx][ny] > new_cost:
+                        q.append([nx, ny, new_cost, i])
+                        new_board[i][nx][ny] = new_cost
+    bfs()
+    result = int(1e9)
+    for i in range(4):
+        result = min(result, new_board[i][-1][-1])
+    return result*100
