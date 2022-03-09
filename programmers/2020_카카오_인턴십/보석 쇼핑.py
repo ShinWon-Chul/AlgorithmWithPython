@@ -40,3 +40,25 @@ def solution(gems):
             result[0] = s
             result[1] = e
     return result
+
+from collections import defaultdict
+
+#더 빠르고 짧은 풀이 코드
+def solution(gems):
+    min_gems  = int(1e9)
+    len_gems = len(gems) 
+    n_gems = len(set(gems))
+    end = 0
+    temp = defaultdict(lambda : 0)
+    for start, gem in enumerate(gems):
+        while len(temp) < n_gems and end < len_gems: 
+            temp[gems[end]] += 1
+            end += 1
+        if len(temp) == n_gems:
+            if min_gems > end-start:
+                min_gems = end-start
+                result = [start+1, end]      
+        temp[gem] -= 1
+        if temp[gem] == 0:
+            del(temp[gem])
+    return result
