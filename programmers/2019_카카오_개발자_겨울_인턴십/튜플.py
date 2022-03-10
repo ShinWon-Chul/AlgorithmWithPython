@@ -20,3 +20,16 @@ def solution(s):
             if j not in result:
                 result.append(j)
     return result
+
+# 다시 풀어본 코드
+from collections import Counter
+import re
+def solution(s):
+    temp = []
+    arr = re.findall('\d+', s)
+    cnt = Counter(arr)
+    for n in cnt:
+        temp.append([int(n), cnt[n]])
+    temp.sort(key = lambda x : x[-1], reverse = True)
+    result = list(map(lambda x : x[0], temp))
+    return result 
