@@ -6,9 +6,8 @@ def solution(routes):
         if start > cam:
             count += 1
             cam = end
-        elif start < cam:
-            if end < cam:
-                cam = end
+        elif start < cam and end < cam:
+            cam = end
         else:
             continue
     return count
