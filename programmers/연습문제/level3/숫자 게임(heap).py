@@ -6,7 +6,7 @@ def solution(A, B):
     heapq.heapify(a)
     heapq.heapify(b)
     count = 0
-    while a and b:
+    while a:
         a_val = heapq.heappop(a)
         b_val = heapq.heappop(b)
         if -b_val > -a_val:
