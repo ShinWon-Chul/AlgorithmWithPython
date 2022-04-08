@@ -13,9 +13,7 @@ def solution(numbers):
     for i in range(1, n+1):
         for x in permutations(numbers, i):
             num = int(''.join(list(x)))
-            if num in [1, 0]:
-                continue
-            if is_prime_number(num):
+            if num not in [1, 0] and is_prime_number(num):
                 nums.add(num)
     answer = len(nums)
     return answer
