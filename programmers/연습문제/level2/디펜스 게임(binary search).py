@@ -11,8 +11,6 @@ def solution(n, k, enemy):
         temp_enemy = temp_enemy[k:]
         nenemy = sum(temp_enemy)
 
-        # 크기를 키우는 경우 -> n > 
-        # 왜 answer가 위로 와야하는지?, 왜 작거나 같아야 하는지
         if nenemy <= n:
             start = mid + 1
             answer = mid
