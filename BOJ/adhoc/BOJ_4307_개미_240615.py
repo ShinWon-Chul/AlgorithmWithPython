@@ -1,3 +1,4 @@
+# 가장 빠른 경우는 막대 중간을 기준으로 끝방향으로 이동하는 개미들중 최대 시간
 def get_fastest_time(locations, mid, l):
     fastest = 0
     for loc in locations:
@@ -7,6 +8,7 @@ def get_fastest_time(locations, mid, l):
             fastest = max(fastest, l-loc)
     return fastest
 
+# 가장 느린 시간 - 막대 중간을 기준으로 반대 끝방향으로 이동하는 개미들중 최대 시간
 def get_slowest_time(locations, mid, l):
     slowest = 0
     for loc in locations:
