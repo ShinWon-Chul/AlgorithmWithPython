@@ -30,9 +30,6 @@ def check_pretty_numbers(numbers):
     # 결과를 저장할 배열
     result = []
     
-    # 입력 받은 수중 최대값
-    limit = max(numbers)
-
     # 트리 생성
     dfs(1)
     for n in numbers:
@@ -49,7 +46,7 @@ inputs = list(map(int, input().split()))
 p = inputs[0]
 numbers = inputs[1:]
 
-# 입력 받은 수중 최대값
+# 자식의 최대값은 입력 받은 수중 최대값 보다 클 필요는 없음
 limit = max(numbers)
 tree_numbers = set()
 
