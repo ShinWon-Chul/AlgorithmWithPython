@@ -11,9 +11,11 @@ def calculate_bracket(bracket):
         if b  == '(':
             stack.append(b)
             tmp *= 2
+
         elif b == '[':
             stack.append(b)
             tmp *= 3
+
         elif b == ')':
             if not stack or stack[-1] != '(':
                 result = 0
@@ -23,6 +25,8 @@ def calculate_bracket(bracket):
                     result += tmp
             stack.pop()
             tmp //= 2
+
+        # ]    
         else:
             if not stack or stack[-1] != '[':
                 result = 0
