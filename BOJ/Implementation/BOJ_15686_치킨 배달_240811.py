@@ -19,7 +19,6 @@ for ix, row in enumerate(grid):
             houses.append([ix, iy])
 
 result = inf
-
 remains = list(itertools.combinations(chickens, m))
 for remain in remains:
     total_dist = 0
@@ -30,3 +29,5 @@ for remain in remains:
         total_dist += local_dist
     result = min(result, total_dist)
 print(result)
+
+# cCm * h * m
