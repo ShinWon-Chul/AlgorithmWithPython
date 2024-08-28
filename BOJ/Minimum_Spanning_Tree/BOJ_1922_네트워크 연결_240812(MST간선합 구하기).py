@@ -26,6 +26,7 @@ for _ in range(e):
     a, b, cost = map(int, input().split())
     edges.append((cost, a, b))
 
+# 크루스칼 알고리즘 가장 비용이 적은 간선을 우선 선택
 edges.sort()
 
 # Check in order of low-cost edges.
