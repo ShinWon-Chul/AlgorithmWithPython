@@ -1,7 +1,6 @@
 # 0. 입력받기
 import sys
 input = sys.stdin.readline
-from math import ceil, log
 
 N, M, K = map(int,input().split())
 
@@ -10,6 +9,7 @@ segment_tree = [0]*(N*4)
 
 
 # 1. 트리 만들기
+# init(1, N, 1)
 def init(start, end, index):
 	# start와 end가 같다면 리프노드이다.
     if start == end:

@@ -1,6 +1,5 @@
 import sys
 input = sys.stdin.readline
-from math import ceil, log
 
 # 0. 입력받기
 N, Q = map(int, input().split())
