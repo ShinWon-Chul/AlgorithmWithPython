@@ -1,10 +1,12 @@
-text = input()
-q = int(input())
+import sys
 
-chars = set(text)
+text = sys.stdin.readline().strip()
+q = int(sys.stdin.readline())
+
+chars = set(text) # n = 2000
 prefix_dict = {}
 
-for c in chars:
+for c in chars: # n = 24
 	arr = []
 	# 먼저 캐릭터 비교를 수행하겠습니다.
 	for t in text:
@@ -22,7 +24,7 @@ for c in chars:
 	prefix_dict[c] = prefix_sum
 
 # 쿼리 수만큼 순회 하겠습니다.
-for _ in range(q):
+for _ in range(q): # m = 2000
 	alr = input().split()
 	a = alr[0]
 	l = int(alr[1])
@@ -33,4 +35,3 @@ for _ in range(q):
 		char_prefix_sum_arr = prefix_dict[a]
 		char_sum = char_prefix_sum_arr[r+1] - char_prefix_sum_arr[l]
 		print(char_sum)
-
